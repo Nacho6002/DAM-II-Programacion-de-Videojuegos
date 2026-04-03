@@ -1,8 +1,3 @@
-
-
-# 2) README del juego  
-Archivo: `DAM-II-Programacion-de-Videojuegos/insect-smasher-godot/README.md`
-
 <h1 align="center">🪰 Insect Smasher</h1>
 
 <p align="center">
