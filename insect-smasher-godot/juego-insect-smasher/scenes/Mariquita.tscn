@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cir5c4mw0e0od"]
+
+[ext_resource type="Script" uid="uid://ba3h8hwcqpru2" path="res://scenes/mariquita.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://8k6avuq70xg6" path="res://Assets/sprites/Mariquita/MariquitaMuere/ladyBug_hit.png" id="2_dead"]
+[ext_resource type="Texture2D" uid="uid://cgwauahb0j86p" path="res://Assets/sprites/Mariquita/MariquitaVuela/ladyBug.png" id="3_fly1"]
+[ext_resource type="Texture2D" uid="uid://dpjprgbbx1hgp" path="res://Assets/sprites/Mariquita/MariquitaVuela/ladyBug_fly.png" id="4_fly2"]
+[ext_resource type="AudioStream" uid="uid://ccah53l1e2tpu" path="res://Assets/SonidosGodot/SonidoBicho.mp3" id="5_cirt6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mariquita"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dead")
+}],
+"loop": true,
+"name": &"morir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fly1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fly2")
+}],
+"loop": true,
+"name": &"volar",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mariquita"]
+radius = 58.137768
+
+[node name="Mariquita" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mariquita")
+animation = &"volar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mariquita")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_cirt6")

@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://mduupe1jkyw2"]
+
+[ext_resource type="Script" uid="uid://cyvkiaf7djsca" path="res://scenes/abeja.gd" id="1_ehf6f"]
+[ext_resource type="Texture2D" uid="uid://c7xh2ks3hinc8" path="res://Assets/sprites/Abeja/AbejaMuerta/bee_dead.png" id="2_lkvvq"]
+[ext_resource type="Texture2D" uid="uid://by6deb7yhp7sm" path="res://Assets/sprites/Abeja/AbejaMuerta/bee_hit.png" id="3_txgm4"]
+[ext_resource type="Texture2D" uid="uid://s8b6lvomhl5c" path="res://Assets/sprites/Abeja/AbejaVuela/bee.png" id="4_r6uhv"]
+[ext_resource type="Texture2D" uid="uid://cxwskj5ouxgfq" path="res://Assets/sprites/Abeja/AbejaVuela/bee_fly.png" id="5_l1k1f"]
+[ext_resource type="AudioStream" uid="uid://ccah53l1e2tpu" path="res://Assets/SonidosGodot/SonidoBicho.mp3" id="6_lkvvq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sqcv2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_txgm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lkvvq")
+}],
+"loop": true,
+"name": &"morir",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_r6uhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l1k1f")
+}],
+"loop": true,
+"name": &"volar",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ppqih"]
+radius = 68.007355
+
+[node name="bicho" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_ehf6f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(146, 150)
+sprite_frames = SubResource("SpriteFrames_sqcv2")
+animation = &"morir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(142, 152)
+shape = SubResource("CircleShape2D_ppqih")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_lkvvq")

@@ -1,0 +1,20 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Insect Smasher Godot 4.5 06 02 Version Final"
+run/main_scene="uid://df7hxsqet2dv0"
+config/features=PackedStringArray("4.5")
+
+[autoload]
+
+Global="*res://scripts/Global.gd"
+MusicaGlobal="*res://MusicaGlobal.tscn"

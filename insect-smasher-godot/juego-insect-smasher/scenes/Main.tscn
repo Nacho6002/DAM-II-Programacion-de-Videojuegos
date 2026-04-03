@@ -1,0 +1,246 @@
+[gd_scene load_steps=24 format=3 uid="uid://uu6l3i63xnj8"]
+
+[ext_resource type="Script" uid="uid://cs8fs8mansccf" path="res://scenes/main.gd" id="1_c01mt"]
+[ext_resource type="Script" uid="uid://clqcja0v6vyaj" path="res://scripts/Aim.gd" id="3_0bbpv"]
+[ext_resource type="Texture2D" uid="uid://1063pfoyq4q0" path="res://Assets/Background/Fondo Ronda 1.png" id="4_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://cir5c4mw0e0od" path="res://scenes/Mariquita.tscn" id="4_wp0k4"]
+[ext_resource type="PackedScene" uid="uid://bpfy4bjsgm38s" path="res://scenes/Mosca.tscn" id="5_bjd11"]
+[ext_resource type="Texture2D" uid="uid://b8w1ffk640vma" path="res://scenes/Matamoscas.png" id="6_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://mduupe1jkyw2" path="res://scenes/bicho.tscn" id="6_nxtc6"]
+[ext_resource type="Texture2D" uid="uid://brny25wayog4w" path="res://HojasViento/Hoja.png" id="6_q8u5g"]
+[ext_resource type="PackedScene" uid="uid://bdp6cy2weffc1" path="res://scenes/Murcielago.tscn" id="6_qmy6f"]
+[ext_resource type="PackedScene" uid="uid://c2l3yaolvruld" path="res://Gusano.tscn" id="7_wp0k4"]
+[ext_resource type="AudioStream" uid="uid://bv387o1n5hexk" path="res://Assets/SonidosGodot/SonidoMatamoscas.wav" id="8_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://bea7wcxi1o1n8" path="res://scenes/ara+�a.tscn" id="8_q8u5g"]
+[ext_resource type="AudioStream" uid="uid://y1jqkcl0sete" path="res://Assets/SonidosGodot/MusicaPartida.mp3" id="13_qmy6f"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wp0k4"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_bjd11"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qmy6f"]
+gradient = SubResource("Gradient_bjd11")
+fill = 1
+
+[sub_resource type="Curve" id="Curve_wp0k4"]
+_data = [Vector2(0.04069768, 0.011235952), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_bjd11"]
+_data = [Vector2(0.16279072, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Gradient" id="Gradient_qmy6f"]
+colors = PackedColorArray(0.8896568, 0.8139764, 0, 1, 0.5294118, 0, 0.09019608, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wp0k4"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhr70"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_bjd11"]
+font_size = 30
+
+[sub_resource type="Curve2D" id="Curve2D_c01mt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -574, -331, 0, 0, 0, 0, -218, -334, 0, 0, 0, 0, -54.73236, -331.70444, 0, 0, 0, 0, 573.02423, -330.55035, 0, 0, 0, 0, 581.31616, 495.26767, 0, 0, 0, 0, -6.624346, 490.1645, 0, 0, 0, 0, -573.0137, 495.26767, 0, 0, 0, 0, -574, -331, 0, 0, 0, 0, -568.9565, -334.00003, 0, 0, 0, 0, -574, -331)
+}
+point_count = 10
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_c01mt")
+abeja_scene = ExtResource("6_nxtc6")
+arana_scene = ExtResource("8_q8u5g")
+mariquita_scene = ExtResource("4_wp0k4")
+mosca_scene = ExtResource("5_bjd11")
+murcielago_scene = ExtResource("6_qmy6f")
+gusano_trampa_scene = ExtResource("7_wp0k4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.41210935, 0.47398844)
+texture = ExtResource("4_jlsqs")
+
+[node name="Aim" type="Area2D" parent="."]
+position = Vector2(-516, -142)
+script = ExtResource("3_0bbpv")
+
+[node name="TiempoEspera" type="Timer" parent="."]
+wait_time = 0.003
+
+[node name="InsectSpawn" type="Timer" parent="."]
+autostart = true
+
+[node name="VientoHojas" type="CPUParticles2D" parent="."]
+position = Vector2(0, 206)
+scale = Vector2(1.0000001, 1.0000002)
+amount = 80
+texture = ExtResource("6_q8u5g")
+lifetime = 28.06
+emission_shape = 3
+emission_rect_extents = Vector2(10, 400)
+direction = Vector2(1, 0.2)
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+
+[node name="Luciernagas" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_wp0k4")
+position = Vector2(0, 253)
+scale = Vector2(1.0000001, 1.0000002)
+emitting = false
+amount = 30
+texture = SubResource("GradientTexture2D_qmy6f")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 350)
+direction = Vector2(1, 0.2)
+gravity = Vector2(0, -10)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color = Color(0.8354734, 0.95735985, 7.70092e-07, 1)
+
+[node name="Lluvia" type="CPUParticles2D" parent="."]
+position = Vector2(560, 0)
+scale = Vector2(1.0000001, 1.0000002)
+emitting = false
+amount = 200
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 1)
+direction = Vector2(1, 0.2)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+angle_min = 20.0
+angle_max = 20.0
+scale_amount_min = 20.0
+scale_amount_max = 30.0
+split_scale = true
+scale_curve_x = SubResource("Curve_wp0k4")
+scale_curve_y = SubResource("Curve_bjd11")
+
+[node name="TormentaArena" type="CPUParticles2D" parent="."]
+position = Vector2(576, 324)
+emitting = false
+amount = 500
+emission_shape = 3
+emission_rect_extents = Vector2(600, 350)
+gravity = Vector2(400, 50)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0.85882354, 0.8627451, 0, 0.5882353)
+
+[node name="Nieve" type="CPUParticles2D" parent="."]
+position = Vector2(560, 0)
+emitting = false
+amount = 200
+lifetime = 1.6
+emission_shape = 3
+emission_rect_extents = Vector2(600, 1)
+gravity = Vector2(0, 900)
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+
+[node name="Brasas" type="CPUParticles2D" parent="."]
+position = Vector2(576, 652)
+amount = 150
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 50)
+gravity = Vector2(0, -60)
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_qmy6f")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="LabelPuntos" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_right = 0.024305556
+anchor_bottom = 0.033950616
+offset_left = 21.0
+offset_top = 8.0
+offset_right = 61.0
+offset_bottom = 31.0
+text = "0"
+label_settings = SubResource("LabelSettings_wp0k4")
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelTiempo" type="Label" parent="HUD"]
+offset_left = 247.0
+offset_top = 8.0
+offset_right = 348.0
+offset_bottom = 50.0
+text = "Puntos"
+label_settings = SubResource("LabelSettings_lhr70")
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelOleada" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_left = 0.026041666
+anchor_right = 0.032986112
+offset_left = 482.0
+offset_top = 10.0
+offset_right = 522.0
+offset_bottom = 33.0
+text = "1"
+label_settings = SubResource("LabelSettings_bjd11")
+metadata/_edit_use_anchors_ = true
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(559.99994, 252.99998)
+scale = Vector2(1.0031794, 0.7838241)
+curve = SubResource("Curve2D_c01mt")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-574, -331)
+rotation = -0.008426767
+
+[node name="bicho" parent="Path2D/PathFollow2D" instance=ExtResource("6_nxtc6")]
+visible = false
+position = Vector2(574.86304, 329.49887)
+rotation = -0.0026132346
+
+[node name="arana" parent="Path2D/PathFollow2D" instance=ExtResource("8_q8u5g")]
+visible = false
+position = Vector2(172.30516, 116.550125)
+
+[node name="Matamoscas" type="Sprite2D" parent="."]
+z_index = 100
+position = Vector2(512, 297)
+scale = Vector2(0.4008547, 0.35789475)
+texture = ExtResource("6_jlsqs")
+offset = Vector2(189.97, 0)
+
+[node name="Cortinilla" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SonidoGolpe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_jlsqs")
+
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_qmy6f")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="timeout" from="InsectSpawn" to="." method="_on_insect_spawn_timeout"]

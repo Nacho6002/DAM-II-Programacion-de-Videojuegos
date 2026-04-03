@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdp6cy2weffc1"]
+
+[ext_resource type="Script" uid="uid://bx32jhaihan71" path="res://scenes/murcielago.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://denaexf0g4de4" path="res://Assets/sprites/Murcielago/MurcielagoMuerto/bat_dead.png" id="2_dead"]
+[ext_resource type="Texture2D" uid="uid://yrq07b6ejig4" path="res://Assets/sprites/Murcielago/MurcielagoMuerto/bat_hit.png" id="3_hit"]
+[ext_resource type="Texture2D" uid="uid://dov7b4etepv47" path="res://Assets/sprites/Murcielago/MurcielagoVuela/bat.png" id="4_fly1"]
+[ext_resource type="Texture2D" uid="uid://d1bqv1gbih2l2" path="res://Assets/sprites/Murcielago/MurcielagoVuela/bat_fly.png" id="5_fly2"]
+[ext_resource type="AudioStream" uid="uid://ccah53l1e2tpu" path="res://Assets/SonidosGodot/SonidoBicho.mp3" id="6_4jon8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_murcielago"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dead")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hit")
+}],
+"loop": true,
+"name": &"morir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fly1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fly2")
+}],
+"loop": true,
+"name": &"volar",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_murcielago"]
+radius = 78.0
+
+[node name="Murcielago" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_murcielago")
+animation = &"volar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_murcielago")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4jon8")

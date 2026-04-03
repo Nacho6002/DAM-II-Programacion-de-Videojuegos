@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpfy4bjsgm38s"]
+
+[ext_resource type="Script" uid="uid://cgrr2gjkm2se7" path="res://scenes/mosca.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://chfnkemfhk0jp" path="res://Assets/sprites/Mosca/MoscaMuere/fly_dead.png" id="2_dead"]
+[ext_resource type="Texture2D" uid="uid://bhy4evenadyc2" path="res://Assets/sprites/Mosca/MoscaMuere/fly_hit.png" id="3_hit"]
+[ext_resource type="Texture2D" uid="uid://c245jptysd543" path="res://Assets/sprites/Mosca/MoscaVuela/fly.png" id="4_fly1"]
+[ext_resource type="Texture2D" uid="uid://d0peixyw7i7aw" path="res://Assets/sprites/Mosca/MoscaVuela/fly_fly.png" id="5_fly2"]
+[ext_resource type="AudioStream" uid="uid://ccah53l1e2tpu" path="res://Assets/SonidosGodot/SonidoBicho.mp3" id="6_j3fty"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mosca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dead")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hit")
+}],
+"loop": true,
+"name": &"morir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fly1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fly2")
+}],
+"loop": true,
+"name": &"volar",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mosca"]
+radius = 57.0
+
+[node name="Mosca" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mosca")
+animation = &"volar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mosca")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_j3fty")

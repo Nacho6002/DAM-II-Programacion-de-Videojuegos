@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://bea7wcxi1o1n8"]
+
+[ext_resource type="Texture2D" uid="uid://b606fd3t7r7im" path="res://Assets/sprites/Ara+-ªa/Ara+-ªaAnda/spider.png" id="1_41s6w"]
+[ext_resource type="Script" uid="uid://wur2ankei8s2" path="res://scenes/ara+¦a.gd" id="1_sr6l7"]
+[ext_resource type="Texture2D" uid="uid://cjsuylpxtl8ui" path="res://Assets/sprites/Ara+-ªa/Ara+-ªaAnda/spider_walk1.png" id="2_sr6l7"]
+[ext_resource type="Texture2D" uid="uid://b58scjon5oh7c" path="res://Assets/sprites/Ara+-ªa/Ara+-ªaAnda/spider_walk2.png" id="3_u2bdl"]
+[ext_resource type="Texture2D" uid="uid://cu84jxd2kif1o" path="res://Assets/sprites/Ara+-ªa/Ara+-ªaMuere/spider_hit.png" id="4_e2h2l"]
+[ext_resource type="Texture2D" uid="uid://bjpqok1ffkbmx" path="res://Assets/sprites/Ara+-ªa/Ara+-ªaMuere/spider_dead.png" id="5_okj7u"]
+[ext_resource type="AudioStream" uid="uid://ccah53l1e2tpu" path="res://Assets/SonidosGodot/SonidoBicho.mp3" id="7_k0ldu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_077ug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e2h2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_okj7u")
+}],
+"loop": true,
+"name": &"morir",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_41s6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sr6l7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u2bdl")
+}],
+"loop": true,
+"name": &"volar",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sr6l7"]
+radius = 64.03124
+
+[node name="arana" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_sr6l7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(281, 54)
+sprite_frames = SubResource("SpriteFrames_077ug")
+animation = &"volar"
+offset = Vector2(-2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(278, 57)
+shape = SubResource("CircleShape2D_sr6l7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_k0ldu")

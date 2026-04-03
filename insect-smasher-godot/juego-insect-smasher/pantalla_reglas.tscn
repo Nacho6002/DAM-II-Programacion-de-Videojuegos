@@ -1,0 +1,285 @@
+[gd_scene load_steps=28 format=3 uid="uid://bwwjj8id7d7py"]
+
+[ext_resource type="Script" uid="uid://bw6n6kfbgtu4w" path="res://pantalla_reglas.gd" id="1_ab0y4"]
+[ext_resource type="Texture2D" uid="uid://barm76w3f6fxh" path="res://scenes/Gemini_Generated_Image_kyq5gpkyq5gpkyq5.png" id="1_pqgdq"]
+[ext_resource type="FontFile" uid="uid://c0wvktq0nevf7" path="res://fuentes godot/Oups_Clean.otf" id="2_6w82k"]
+[ext_resource type="Texture2D" uid="uid://s8b6lvomhl5c" path="res://Assets/sprites/Abeja/AbejaVuela/bee.png" id="3_kof87"]
+[ext_resource type="Texture2D" uid="uid://cjsuylpxtl8ui" path="res://Assets/sprites/Ara+-�a/Ara+-�aAnda/spider_walk1.png" id="4_x2nii"]
+[ext_resource type="Texture2D" uid="uid://cgwauahb0j86p" path="res://Assets/sprites/Mariquita/MariquitaVuela/ladyBug.png" id="5_8qfao"]
+[ext_resource type="Texture2D" uid="uid://d0peixyw7i7aw" path="res://Assets/sprites/Mosca/MoscaVuela/fly_fly.png" id="6_ab0y4"]
+[ext_resource type="Texture2D" uid="uid://dov7b4etepv47" path="res://Assets/sprites/Murcielago/MurcielagoVuela/bat.png" id="7_f27gx"]
+[ext_resource type="FontFile" uid="uid://gxrbaf6ojkp3" path="res://fuentes godot/Oups.otf" id="8_8qfao"]
+[ext_resource type="Texture2D" uid="uid://dpidnyqc3ht1c" path="res://Assets/sprites/Gusano Malo/GusanoVivo/worm.png" id="8_x2nii"]
+[ext_resource type="Texture2D" uid="uid://dpjprgbbx1hgp" path="res://Assets/sprites/Mariquita/MariquitaVuela/ladyBug_fly.png" id="11_6xgwk"]
+[ext_resource type="Texture2D" uid="uid://b606fd3t7r7im" path="res://Assets/sprites/Ara+-�a/Ara+-�aAnda/spider.png" id="11_7ooto"]
+[ext_resource type="Texture2D" uid="uid://cxwskj5ouxgfq" path="res://Assets/sprites/Abeja/AbejaVuela/bee_fly.png" id="11_f27gx"]
+[ext_resource type="Texture2D" uid="uid://bosmoqn5f2ytb" path="res://Assets/sprites/Mariquita/MariquitaVuela/ladyBug_walk.png" id="12_5llcx"]
+[ext_resource type="Texture2D" uid="uid://c245jptysd543" path="res://Assets/sprites/Mosca/MoscaVuela/fly.png" id="13_73avc"]
+[ext_resource type="Texture2D" uid="uid://b58scjon5oh7c" path="res://Assets/sprites/Ara+-�a/Ara+-�aAnda/spider_walk2.png" id="13_kaolv"]
+[ext_resource type="Texture2D" uid="uid://d1bqv1gbih2l2" path="res://Assets/sprites/Murcielago/MurcielagoVuela/bat_fly.png" id="16_bhxxd"]
+[ext_resource type="Texture2D" uid="uid://dxyrlp7ass2li" path="res://Assets/sprites/Gusano Malo/GusanoVivo/worm_walk.png" id="18_v1hav"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab0y4"]
+bg_color = Color(0.8225349, 0, 0.1845237, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 10
+border_color = Color(0.41202313, 0, 0.09205938, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f27gx"]
+bg_color = Color(0.7858072, 0, 0.08556854, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_faogj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kof87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_f27gx")
+}],
+"loop": true,
+"name": &"abeja",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sua2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_7ooto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x2nii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kaolv")
+}],
+"loop": true,
+"name": &"mover",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12bwe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8qfao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6xgwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5llcx")
+}],
+"loop": true,
+"name": &"mover",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3g53o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_73avc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ab0y4")
+}],
+"loop": true,
+"name": &"mover",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_frjdh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_f27gx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bhxxd")
+}],
+"loop": true,
+"name": &"mover",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0bxnl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_x2nii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_v1hav")
+}],
+"loop": true,
+"name": &"mover",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ant6t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_x2nii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_v1hav")
+}],
+"loop": true,
+"name": &"mover",
+"speed": 5.0
+}]
+
+[node name="PantallaReglas" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("1_ab0y4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -563.0
+offset_top = -305.0
+offset_right = 577.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pqgdq")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -578.0
+offset_top = -316.0
+offset_right = 586.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.76862746)
+
+[node name="LabelTitulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = -246.0
+offset_top = -310.0
+offset_right = 329.0
+offset_bottom = -180.0
+theme_override_colors/font_color = Color(0.39888024, 0.9271108, 0.82422626, 1)
+theme_override_fonts/font = ExtResource("2_6w82k")
+theme_override_font_sizes/font_size = 100
+text = "COMO JUGAR"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -232.0
+offset_top = -16.0
+offset_right = 281.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 30
+text = "¡NO TOCAR! Si aplastas 3, pierdes!"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -240.0
+offset_top = -160.0
+offset_right = 316.0
+offset_bottom = -110.0
+theme_override_font_sizes/font_size = 30
+text = "¡Aplasta para ganar Tiempo y Puntos!"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = -446.0
+offset_top = 97.0
+offset_right = 495.0
+offset_bottom = 165.0
+theme_override_fonts/font = ExtResource("8_8qfao")
+theme_override_font_sizes/font_size = 50
+text = "Sobrevive el tiempo y supera los niveles"
+
+[node name="BotonVolver" type="Button" parent="."]
+layout_mode = 0
+offset_left = -54.0
+offset_top = 215.0
+offset_right = 84.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("2_6w82k")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_ab0y4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f27gx")
+text = "VOLVER"
+
+[node name="abejareglas" type="AnimatedSprite2D" parent="."]
+position = Vector2(-299, -155)
+sprite_frames = SubResource("SpriteFrames_faogj")
+animation = &"abeja"
+autoplay = "abeja"
+
+[node name="arañareglas" type="AnimatedSprite2D" parent="."]
+position = Vector2(-388.75, -184)
+scale = Vector2(0.9929578, 1)
+sprite_frames = SubResource("SpriteFrames_sua2q")
+animation = &"mover"
+autoplay = "mover"
+
+[node name="mariquitareglas" type="AnimatedSprite2D" parent="."]
+position = Vector2(-367, -114)
+sprite_frames = SubResource("SpriteFrames_12bwe")
+animation = &"mover"
+autoplay = "mover"
+
+[node name="moscareglas" type="AnimatedSprite2D" parent="."]
+position = Vector2(363, -174)
+sprite_frames = SubResource("SpriteFrames_3g53o")
+animation = &"mover"
+autoplay = "mover"
+
+[node name="murcielagoreglas" type="AnimatedSprite2D" parent="."]
+position = Vector2(397, -122)
+sprite_frames = SubResource("SpriteFrames_frjdh")
+animation = &"mover"
+autoplay = "mover"
+
+[node name="gusanoreglasI" type="AnimatedSprite2D" parent="."]
+position = Vector2(-353.375, 8.437504)
+scale = Vector2(1.3769842, 1.3532611)
+sprite_frames = SubResource("SpriteFrames_0bxnl")
+animation = &"mover"
+autoplay = "mover"
+
+[node name="gusanoreglasII" type="AnimatedSprite2D" parent="."]
+position = Vector2(392.25, 4.25)
+scale = Vector2(1.3253968, 1.3695652)
+sprite_frames = SubResource("SpriteFrames_ant6t")
+animation = &"mover"
+autoplay = "mover"
+
+[connection signal="pressed" from="BotonVolver" to="." method="_on_boton_volver_pressed"]

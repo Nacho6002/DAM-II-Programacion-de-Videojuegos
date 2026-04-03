@@ -1,0 +1,366 @@
+[gd_scene load_steps=38 format=3 uid="uid://cmf0ypp3ddy18"]
+
+[ext_resource type="Script" uid="uid://dcejj1g8ewvom" path="res://scripts/game_over.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://barm76w3f6fxh" path="res://scenes/Gemini_Generated_Image_kyq5gpkyq5gpkyq5.png" id="2_4noiy"]
+[ext_resource type="Texture2D" uid="uid://bsq7ybxqir7um" path="res://scenes/Game_Over.png" id="3_gijjb"]
+[ext_resource type="Texture2D" uid="uid://b8uoift7qr35r" path="res://BichosAnimet/ara+�a1.png" id="5_0winm"]
+[ext_resource type="Texture2D" uid="uid://dqgrc86e7qwco" path="res://BichosAnimet/ara+�a2.png" id="6_j3qfp"]
+[ext_resource type="Texture2D" uid="uid://dl605lt75gj8a" path="res://BichosAnimet/ara+�a3.png" id="7_skdqa"]
+[ext_resource type="Texture2D" uid="uid://wrtk33igipfc" path="res://BichosAnimet/margarita1.png" id="8_8dkuh"]
+[ext_resource type="Texture2D" uid="uid://bnftqjsjgxnij" path="res://BichosAnimet/margarita3.png" id="9_0icj0"]
+[ext_resource type="Texture2D" uid="uid://w100jbhb3gm1" path="res://BichosAnimet/abeja1.png" id="9_spr6i"]
+[ext_resource type="Texture2D" uid="uid://cpt3134fuaux6" path="res://BichosAnimet/margarita2.png" id="10_5fq7v"]
+[ext_resource type="Texture2D" uid="uid://dn64jvhlmse2o" path="res://BichosAnimet/abeja2.png" id="10_6yffd"]
+[ext_resource type="FontFile" uid="uid://c0wvktq0nevf7" path="res://fuentes godot/Oups_Clean.otf" id="11_0icj0"]
+[ext_resource type="Texture2D" uid="uid://cw5mg0lpqs278" path="res://Assets/Game Over/BICHOS GANAN.png" id="11_5dsns"]
+[ext_resource type="Texture2D" uid="uid://b2ndxxkxy6u2a" path="res://BichosAnimet/abeja3.png" id="11_jsyru"]
+[ext_resource type="Texture2D" uid="uid://cpskbwy2cwcd4" path="res://BichosAnimet/mosco1.png" id="12_4h8ls"]
+[ext_resource type="Texture2D" uid="uid://442o0844ajnp" path="res://BichosAnimet/murcielago 1.png" id="12_xlh57"]
+[ext_resource type="Texture2D" uid="uid://dlb4gff5caf2k" path="res://BichosAnimet/murcielago 2.png" id="13_kjj73"]
+[ext_resource type="Texture2D" uid="uid://n65w4rnstr2g" path="res://BichosAnimet/mosca2.png" id="13_m0y6l"]
+[ext_resource type="Texture2D" uid="uid://csnko6sbkk1vh" path="res://BichosAnimet/murcielago 3.png" id="14_otmnh"]
+[ext_resource type="Texture2D" uid="uid://b4x3g46qotr5c" path="res://BichosAnimet/mosca3.png" id="14_x0efx"]
+[ext_resource type="AudioStream" uid="uid://cqo4pdqgquouv" path="res://Assets/SonidosGodot/MouseClick.ogg" id="21_jsyru"]
+[ext_resource type="AudioStream" uid="uid://ddybnyurrxp1c" path="res://Assets/SonidosGodot/MouseA.ogg" id="22_4h8ls"]
+[ext_resource type="AudioStream" uid="uid://d023hnrl5tkon" path="res://Assets/SonidosGodot/MusicaGameOver.mp3" id="23_4h8ls"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k2h4m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_xlh57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kjj73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_otmnh")
+}],
+"loop": true,
+"name": &"mover",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0winm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0winm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j3qfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_skdqa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ya815"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_spr6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6yffd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jsyru")
+}],
+"loop": true,
+"name": &"mover",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kthvs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_4h8ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_m0y6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_x0efx")
+}],
+"loop": true,
+"name": &"mover",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3qfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_8dkuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0icj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5fq7v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_5fq7v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ye5n"]
+bg_color = Color(0.8225349, 0, 0.1845237, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 10
+border_color = Color(0.41202313, 0, 0.09205938, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dsns"]
+bg_color = Color(0.7858072, 0, 0.08556854, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_4h8ls"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jsyru"]
+resource_name = "respirarGameOver"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m0y6l"]
+_data = {
+&"RESET": SubResource("Animation_4h8ls"),
+&"respirarGameOver": SubResource("Animation_jsyru")
+}
+
+[sub_resource type="Animation" id="Animation_x0efx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_m0y6l"]
+resource_name = "respiracionTituloGameOver"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ya815"]
+_data = {
+&"RESET": SubResource("Animation_x0efx"),
+&"respiracionTituloGameOver": SubResource("Animation_m0y6l")
+}
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(575, 326)
+scale = Vector2(0.36347854, 0.5478407)
+texture = ExtResource("2_4noiy")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(1065, 131)
+sprite_frames = SubResource("SpriteFrames_k2h4m")
+animation = &"mover"
+autoplay = "mover"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(171, 490)
+sprite_frames = SubResource("SpriteFrames_0winm")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(200, 271)
+sprite_frames = SubResource("SpriteFrames_ya815")
+animation = &"mover"
+autoplay = "mover"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(868, 297)
+sprite_frames = SubResource("SpriteFrames_kthvs")
+animation = &"mover"
+autoplay = "mover"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1009, 524)
+scale = Vector2(0.5, 0.53523034)
+sprite_frames = SubResource("SpriteFrames_j3qfp")
+autoplay = "default"
+
+[node name="PanelRecord" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -2.0
+offset_top = -8.0
+offset_right = 1161.0
+offset_bottom = 650.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.096204735, 0.09620475, 0.096204735, 0.7882353)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelRecord"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 333.0
+offset_top = 260.0
+offset_right = -349.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="LabelTitulo" type="Label" parent="PanelRecord/VBoxContainer"]
+layout_mode = 2
+text = "Puntos: 0"
+horizontal_alignment = 1
+
+[node name="LabelRecord" type="Label" parent="PanelRecord/VBoxContainer"]
+layout_mode = 2
+text = "Récord: 0"
+horizontal_alignment = 1
+
+[node name="LabelNuevo" type="Label" parent="PanelRecord/VBoxContainer"]
+layout_mode = 2
+text = "¡NUEVO RÉCORD!"
+horizontal_alignment = 1
+
+[node name="BotonSalir" type="Button" parent="PanelRecord"]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 544.0
+offset_right = 889.0
+offset_bottom = 612.0
+theme = SubResource("Theme_5fq7v")
+theme_override_fonts/font = ExtResource("11_0icj0")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ye5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5dsns")
+text = "SALIR"
+
+[node name="BotonReintentar" type="Button" parent="PanelRecord"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 547.0
+offset_right = 489.0
+offset_bottom = 610.0
+theme = SubResource("Theme_5fq7v")
+theme_override_fonts/font = ExtResource("11_0icj0")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ye5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5dsns")
+text = "REINTENTAR"
+
+[node name="TituloImagen" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 137.0
+offset_right = 1022.0
+offset_bottom = 174.0
+pivot_offset = Vector2(442.5, 87)
+texture = ExtResource("3_gijjb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TituloImagen"]
+libraries = {
+&"": SubResource("AnimationLibrary_m0y6l")
+}
+autoplay = "respirarGameOver"
+
+[node name="Mensaje" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 121.0
+offset_right = 817.0
+offset_bottom = 382.0
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(251.5, 130.5)
+texture = ExtResource("11_5dsns")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mensaje"]
+libraries = {
+&"": SubResource("AnimationLibrary_ya815")
+}
+autoplay = "respiracionTituloGameOver"
+
+[node name="SonidoClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_jsyru")
+
+[node name="SonidoHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_4h8ls")
+
+[node name="MusicaGameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_4h8ls")
+volume_db = -7.0
+pitch_scale = 0.6
+autoplay = true
+
+[connection signal="mouse_entered" from="PanelRecord/BotonSalir" to="." method="_on_boton_salir_mouse_entered"]
+[connection signal="mouse_entered" from="PanelRecord/BotonReintentar" to="." method="_on_boton_reintentar_mouse_entered"]

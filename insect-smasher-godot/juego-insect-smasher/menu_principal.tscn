@@ -1,0 +1,294 @@
+[gd_scene load_steps=35 format=3 uid="uid://df7hxsqet2dv0"]
+
+[ext_resource type="Shader" uid="uid://25hqncmr2jkb" path="res://menu_principal.gdshader" id="1_gmcsc"]
+[ext_resource type="Script" uid="uid://cp1ifcqmc8rga" path="res://menu_principal.gd" id="1_ns3he"]
+[ext_resource type="Texture2D" uid="uid://barm76w3f6fxh" path="res://scenes/Gemini_Generated_Image_kyq5gpkyq5gpkyq5.png" id="2_ul6ys"]
+[ext_resource type="Texture2D" uid="uid://cuskji8aswwiu" path="res://Assets/TituloGame/Titulo.png" id="4_jwgco"]
+[ext_resource type="FontFile" uid="uid://c0wvktq0nevf7" path="res://fuentes godot/Oups_Clean.otf" id="5_jwgco"]
+[ext_resource type="Texture2D" uid="uid://w100jbhb3gm1" path="res://BichosAnimet/abeja1.png" id="5_yxm4i"]
+[ext_resource type="Texture2D" uid="uid://dn64jvhlmse2o" path="res://BichosAnimet/abeja2.png" id="6_b574n"]
+[ext_resource type="Texture2D" uid="uid://b2ndxxkxy6u2a" path="res://BichosAnimet/abeja3.png" id="7_611wp"]
+[ext_resource type="Texture2D" uid="uid://b8uoift7qr35r" path="res://BichosAnimet/ara+�a1.png" id="8_xpioy"]
+[ext_resource type="Texture2D" uid="uid://dqgrc86e7qwco" path="res://BichosAnimet/ara+�a2.png" id="9_kni6g"]
+[ext_resource type="Texture2D" uid="uid://dl605lt75gj8a" path="res://BichosAnimet/ara+�a3.png" id="10_nx6e2"]
+[ext_resource type="Texture2D" uid="uid://wrtk33igipfc" path="res://BichosAnimet/margarita1.png" id="11_dcvsf"]
+[ext_resource type="Texture2D" uid="uid://cpt3134fuaux6" path="res://BichosAnimet/margarita2.png" id="12_kcxxd"]
+[ext_resource type="Texture2D" uid="uid://bnftqjsjgxnij" path="res://BichosAnimet/margarita3.png" id="13_palpy"]
+[ext_resource type="Texture2D" uid="uid://cpskbwy2cwcd4" path="res://BichosAnimet/mosco1.png" id="14_32uqj"]
+[ext_resource type="Texture2D" uid="uid://b4x3g46qotr5c" path="res://BichosAnimet/mosca3.png" id="15_jwgco"]
+[ext_resource type="Texture2D" uid="uid://n65w4rnstr2g" path="res://BichosAnimet/mosca2.png" id="16_v520y"]
+[ext_resource type="Texture2D" uid="uid://442o0844ajnp" path="res://BichosAnimet/murcielago 1.png" id="18_w0cmo"]
+[ext_resource type="Texture2D" uid="uid://dlb4gff5caf2k" path="res://BichosAnimet/murcielago 2.png" id="19_oim03"]
+[ext_resource type="Texture2D" uid="uid://csnko6sbkk1vh" path="res://BichosAnimet/murcielago 3.png" id="20_dfnfp"]
+[ext_resource type="AudioStream" uid="uid://cqo4pdqgquouv" path="res://Assets/SonidosGodot/MouseClick.ogg" id="22_xmm6j"]
+[ext_resource type="AudioStream" uid="uid://ddybnyurrxp1c" path="res://Assets/SonidosGodot/MouseA.ogg" id="23_xd7cn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ns3he"]
+shader = ExtResource("1_gmcsc")
+shader_parameter/speed = 1.0
+shader_parameter/amplitude = 0.008
+shader_parameter/frequency = 5.0
+
+[sub_resource type="Animation" id="Animation_jwgco"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_32uqj"]
+resource_name = "latido"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v520y"]
+_data = {
+&"RESET": SubResource("Animation_jwgco"),
+&"latido": SubResource("Animation_32uqj")
+}
+
+[sub_resource type="Theme" id="Theme_a6518"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwgco"]
+bg_color = Color(0.8225349, 0, 0.1845237, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 10
+border_color = Color(0.41202313, 0, 0.09205938, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32uqj"]
+bg_color = Color(0.7858072, 0, 0.08556854, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xpioy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yxm4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b574n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_611wp")
+}],
+"loop": true,
+"name": &"abejamenu",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcvsf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xpioy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kni6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nx6e2")
+}],
+"loop": true,
+"name": &"arañamenu",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32uqj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_dcvsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kcxxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_palpy")
+}],
+"loop": true,
+"name": &"margaritamenu",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2mtc3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_32uqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jwgco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_v520y")
+}],
+"loop": true,
+"name": &"moscomenu",
+"speed": 7.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pj3pu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_w0cmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_oim03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_dfnfp")
+}],
+"loop": true,
+"name": &"murcielagomenu",
+"speed": 5.0
+}]
+
+[node name="Menu Principal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ns3he")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ns3he")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ul6ys")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 27.0
+offset_right = 920.0
+offset_bottom = 318.0
+pivot_offset = Vector2(338.5, 184.5)
+texture = ExtResource("4_jwgco")
+
+[node name="respirar" type="AnimationPlayer" parent="TextureRect2"]
+libraries = {
+&"": SubResource("AnimationLibrary_v520y")
+}
+autoplay = "latido"
+
+[node name="BotonJugar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 395.0
+offset_right = 493.0
+offset_bottom = 458.0
+theme = SubResource("Theme_a6518")
+theme_override_fonts/font = ExtResource("5_jwgco")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwgco")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32uqj")
+text = "JUGAR"
+
+[node name="BotonSalir" type="Button" parent="."]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 531.0
+offset_right = 658.0
+offset_bottom = 597.0
+theme_override_fonts/font = ExtResource("5_jwgco")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwgco")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32uqj")
+text = "SALIR"
+
+[node name="BotonReglas" type="Button" parent="."]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 394.0
+offset_right = 783.0
+offset_bottom = 457.0
+theme_override_fonts/font = ExtResource("5_jwgco")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwgco")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32uqj")
+text = "Reglas"
+
+[node name="AbejaMenu" type="AnimatedSprite2D" parent="."]
+position = Vector2(134, 211)
+scale = Vector2(0.85697675, 0.88677114)
+sprite_frames = SubResource("SpriteFrames_xpioy")
+animation = &"abejamenu"
+autoplay = "abejamenu"
+
+[node name="ArañaMenu" type="AnimatedSprite2D" parent="."]
+position = Vector2(182, 447)
+sprite_frames = SubResource("SpriteFrames_dcvsf")
+animation = &"arañamenu"
+autoplay = "arañamenu"
+
+[node name="MargaritaMenu" type="AnimatedSprite2D" parent="."]
+position = Vector2(864, 525)
+scale = Vector2(0.55317575, 0.50542)
+sprite_frames = SubResource("SpriteFrames_32uqj")
+animation = &"margaritamenu"
+autoplay = "margaritamenu"
+
+[node name="MoscoMenu" type="AnimatedSprite2D" parent="."]
+position = Vector2(805, 98.99999)
+scale = Vector2(0.84013605, 0.8917526)
+sprite_frames = SubResource("SpriteFrames_2mtc3")
+animation = &"moscomenu"
+autoplay = "moscomenu"
+
+[node name="MurcielagoMenu" type="AnimatedSprite2D" parent="."]
+position = Vector2(1037, 289)
+sprite_frames = SubResource("SpriteFrames_pj3pu")
+animation = &"murcielagomenu"
+autoplay = "murcielagomenu"
+
+[node name="SonidoClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_xmm6j")
+
+[node name="SonidoHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_xd7cn")
+pitch_scale = 0.6
+
+[connection signal="mouse_entered" from="BotonJugar" to="." method="_on_boton_jugar_mouse_entered"]
+[connection signal="pressed" from="BotonJugar" to="." method="_on_boton_jugar_pressed"]
+[connection signal="mouse_entered" from="BotonSalir" to="." method="_on_boton_salir_mouse_entered"]
+[connection signal="pressed" from="BotonSalir" to="." method="_on_boton_salir_pressed"]
+[connection signal="mouse_entered" from="BotonReglas" to="." method="_on_boton_reglas_mouse_entered"]
+[connection signal="pressed" from="BotonReglas" to="." method="_on_boton_reglas_pressed"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2cld0a4buao"]
+
+[ext_resource type="AudioStream" uid="uid://dcgm0w4fc707j" path="res://Assets/SonidosGodot/MusicaMenuPrincipal.mp3" id="1_pwxcn"]
+
+[node name="MusicaGlobal" type="AudioStreamPlayer"]
+stream = ExtResource("1_pwxcn")
