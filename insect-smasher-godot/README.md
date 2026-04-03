@@ -70,6 +70,9 @@ Este proyecto fue realizado en equipo junto con:
 ### Otro nivel
 ![Gameplay nivel 2](capturas/nivel-2.png)
 
+### Pantalla Game Over
+![Pantalla Game Over](capturas/pantalla-game-over.png)
+
 ---
 
 ## 📚 Documentación
