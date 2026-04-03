@@ -1,10 +1,28 @@
-## Trabajo en equipo
-Este proyecto fue realizado en equipo junto con:
-- Marcos Aranda
-- Antonio Muñoz
-- Ignacio Villacis
+# Programación de Videojuegos - Proyectos DAM
 
-## Reparto de contribuciones
-- **Ignacio Villacis**: desarrollo principal del videojuego, lógica general, animaciones, matamoscas, niveles, progresión de dificultad, sistema de puntuación y mayor parte de la implementación.
-- **Marcos Aranda**: apoyo en recursos del juego, primer escenario, movimiento inicial de bichos y parte del sistema de tiempo.
-- **Antonio Muñoz**: incorporación de música y apoyo en el proyecto.
+Repositorio con proyectos del módulo de **Programación de Videojuegos** del ciclo formativo de **Desarrollo de Aplicaciones Multiplataforma (DAM)**.
+
+## Sobre este repositorio
+Aquí recopilo proyectos académicos relacionados con desarrollo de videojuegos, lógica de juego, escenas, animaciones e interacción en motores 2D.
+
+## Proyecto incluido
+
+### Insect Smasher
+Videojuego arcade en 2D desarrollado con Godot, centrado en reflejos, puntuación, niveles y progresión de dificultad.
+
+## Tecnologías trabajadas
+- Godot
+- GDScript
+- Diseño de escenas 2D
+- Animaciones
+- Lógica de juego
+- HUD y control de niveles
+
+## Estructura del repositorio
+- `insect-smasher-godot/`
+
+## Objetivo
+Mostrar de forma clara y ordenada un proyecto representativo del módulo de Programación de Videojuegos, combinando diseño visual, lógica de juego e implementación técnica.
+
+## Autor
+Ignacio Daniel Villacis Quishpe
